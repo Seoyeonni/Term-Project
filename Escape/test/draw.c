@@ -52,6 +52,12 @@ void draw_map(int n)
 	gotoxy(22, 6);
 	printf("======================MAP%d======================", n);
 	draw_box(20, 36, 70, 43); // 메시지창
+	textcolor(8, 0);
+	gotoxy(37, 39);
+	printf("Space bar를 눌러");
+	gotoxy(35, 40);
+	printf("메시지를 확인하세요");
+	textcolor(15, 0);
 	draw_box(72, 5, 91, 35); // 인벤토리
 	gotoxy(74, 6);
 	printf("====Inventory====");

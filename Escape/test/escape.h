@@ -27,6 +27,7 @@
 #define RIGHT 0x4d
 
 #define SPACEBAR 0x20
+#define ENTER 13
 
 #define MAP_X1 20
 #define MAP_Y1 6
@@ -53,6 +54,7 @@ void draw_random_item();
 int check_item_collision2(int x, int y, char ch);
 void print_quiz1(int n);
 void draw_start();
+void draw_map0();
 
 // basic
 void gotoxy(int x, int y);

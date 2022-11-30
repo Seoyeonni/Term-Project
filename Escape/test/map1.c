@@ -91,15 +91,38 @@ int check_maze_collision(int x, int y, char ch)
 	}
 
 	// 특수문자인 경우로 미로 좌우에 대한 충돌처리시 좌표 조정
-	if (ch == RIGHT) x = x + 1;
-
 	// 미로의 배열은 (0,0)부터 시작하고 실제로 미로가 그려지는 좌표는 (22, 13)이므로 동일한 좌표로 취급
 	// 배열의 값이 '1'인 경우 벽이므로 이때 1을 반환하여 충돌이 일어났다는 것을 반환
-	if (maze[y - 13][x - 22] == '1')
-	{
-		return 1;
+	switch (ch) {
+	case UP: case DOWN:
+		if (maze[y - 13][x - 20] == '1')
+		{
+			return 1;
+		}
+		if (maze[y - 13][x - 22] == '1')
+		{
+			return 1;
+		}
+		break;
+	case LEFT:
+		x -= 1;
+
+		if (maze[y - 13][x - 22] == '1')
+		{
+			return 1;
+		}
+		break;
+	case RIGHT:
+		x += 2;
+
+		if (maze[y - 13][x - 22] == '1')
+		{
+			return 1;
+		}
+		break;
 	}
-	else return 0;
+
+	return 0;
 }
 
 int check_map1_key = 0; // 아이템 얻었는지 확인
@@ -271,7 +294,7 @@ void move_star()
 				if (check_map1_key == 1) { // 열쇠를 얻었다면
 					system("cls");
 					textcolor(15, 0);
-					draw_map3();
+					draw_map2();
 					// 인벤토리 불러오기
 					return;
 				}

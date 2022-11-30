@@ -158,7 +158,7 @@ void ending_scene()
     // R 키를 눌러 종료한 경우 화면을 지우고 다시 map1부터 시작
     if (ch == 'r') {
         system("cls");
-        draw_map1();
+        draw_map0();
     }
     // 아무 키도 누르지 않은 상태로 노래가 끝난 경우 다시 처음부터 연주 시작 후 입력 대기 (무한 루프)
     else {

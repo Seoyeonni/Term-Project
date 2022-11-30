@@ -155,14 +155,12 @@ void remove_player_sight(int x, int y)
 
 			int xx = xPos + j - PLAYER_SIGHT_X;
 			int yy = yPos + i - PLAYER_SIGHT_Y;
-			if (map2[yy][xx] == '1') {
-				textcolor(0, 0);
-				printf(" ");
-			}
-			if (map2[yy][xx] == '0') {
-				textcolor(0, 0);
-				printf(" ");
-			}
+
+			if (xx < 0 || yy < 0 || xx >= COL_MAX_SIZE2 || yy >= ROW_MAX_SIZE2)
+				continue;
+
+			textcolor(0, 0);
+			printf(" ");
 		}
 	}
 
@@ -291,57 +289,71 @@ int check_map2_item8 = 0;
 // 아이템 충돌 감지
 int check_item_collision2(int x, int y, char ch)
 {
+	// 아이템 위치를 배열에서의 위치로 변환
+	// 배열에서 아이템을 빈 공간으로 바꿔 아이템 중복 획득을 방지
+	int xPos = x - MAP2_START_X;
+	int yPos = y - MAP2_START_Y;
+
 	// 열쇠
-	if (x == key_x && y == key_y) {
+	if (map2[yPos][xPos] == '1' && x == key_x && y == key_y) {
 		check_map2_key = 1;
+		map2[yPos][xPos] = '0';
 		return 9;
 	}
 
 	// 아이템1
-	if (x == item1_x && y == item1_y) {
+	if (map2[yPos][xPos] == '3' && x == item1_x && y == item1_y) {
 		check_map2_item1 = 1;
+		map2[yPos][xPos] = '0';
 		return 1;
 	}
 
 	// 아이템2
-	if (x == item2_x && y == item2_y) {
+	if (map2[yPos][xPos] == '3' && x == item2_x && y == item2_y) {
 		check_map2_item2 = 1;
+		map2[yPos][xPos] = '0';
 		return 2;
 	}
 
 	// 아이템3
-	if (x == item3_x && y == item3_y) {
+	if (map2[yPos][xPos] == '3' && x == item3_x && y == item3_y) {
 		check_map2_item3 = 1;
+		map2[yPos][xPos] = '0';
 		return 3;
 	}
 
 	// 아이템4
-	if (x == item4_x && y == item4_y) {
+	if (map2[yPos][xPos] == '3' && x == item4_x && y == item4_y) {
 		check_map2_item4 = 1;
+		map2[yPos][xPos] = '0';
 		return 4;
 	}
 
 	// 아이템5
-	if (x == item5_x && y == item5_y) {
+	if (map2[yPos][xPos] == '3' && x == item5_x && y == item5_y) {
 		check_map2_item5 = 1;
+		map2[yPos][xPos] = '0';
 		return 5;
 	}
 
 	// 아이템6
-	if (x == item6_x && y == item6_y) {
+	if (map2[yPos][xPos] == '4' && x == item6_x && y == item6_y) {
 		check_map2_item6 = 1;
+		map2[yPos][xPos] = '0';
 		return 6;
 	}
 
 	// 아이템7
-	if (x == item7_x && y == item7_y) {
+	if (map2[yPos][xPos] == '4' && x == item7_x && y == item7_y) {
 		check_map2_item7 = 1;
+		map2[yPos][xPos] = '0';
 		return 7;
 	}
 
 	// 아이템8
-	if (x == item8_x && y == item8_y) {
+	if (map2[yPos][xPos] == '4' && x == item8_x && y == item8_y) {
 		check_map2_item8 = 1;
+		map2[yPos][xPos] = '0';
 		return 8;
 	}
 
