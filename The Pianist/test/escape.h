@@ -68,6 +68,7 @@ int check_item_collision2(int x, int y, char ch);
 void print_quiz1(int n);
 void draw_start();
 void draw_map0();
+void show_quiz(int n);
 
 // basic
 void gotoxy(int x, int y);

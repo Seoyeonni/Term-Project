@@ -343,6 +343,7 @@ int check_item_collision2(int x, int y, char ch)
 	if (map2[yPos][xPos] == '3' && x == item1_x && y == item1_y) {
 		check_map2_item1 = 1;
 		map2[yPos][xPos] = '0';
+		show_quiz(1);
 		item--;
 		gotoxy(38, 39);
 		textcolor(15, 0);
@@ -354,6 +355,7 @@ int check_item_collision2(int x, int y, char ch)
 	if (map2[yPos][xPos] == '3' && x == item2_x && y == item2_y) {
 		check_map2_item2 = 1;
 		map2[yPos][xPos] = '0';
+		show_quiz(1);
 		item--;
 		gotoxy(38, 39);
 		textcolor(15, 0);
@@ -365,6 +367,7 @@ int check_item_collision2(int x, int y, char ch)
 	if (map2[yPos][xPos] == '3' && x == item3_x && y == item3_y) {
 		check_map2_item3 = 1;
 		map2[yPos][xPos] = '0';
+		show_quiz(1);
 		item--;
 		gotoxy(38, 39);
 		textcolor(15, 0);
@@ -376,6 +379,7 @@ int check_item_collision2(int x, int y, char ch)
 	if (map2[yPos][xPos] == '3' && x == item4_x && y == item4_y) {
 		check_map2_item4 = 1;
 		map2[yPos][xPos] = '0';
+		show_quiz(1);
 		item--;
 		gotoxy(38, 39);
 		textcolor(15, 0);
@@ -387,6 +391,7 @@ int check_item_collision2(int x, int y, char ch)
 	if (map2[yPos][xPos] == '3' && x == item5_x && y == item5_y) {
 		check_map2_item5 = 1;
 		map2[yPos][xPos] = '0';
+		show_quiz(1);
 		item--;
 		gotoxy(38, 39);
 		textcolor(15, 0);
@@ -398,6 +403,7 @@ int check_item_collision2(int x, int y, char ch)
 	if (map2[yPos][xPos] == '4' && x == item6_x && y == item6_y) {
 		check_map2_item6 = 1;
 		map2[yPos][xPos] = '0';
+		show_quiz(1);
 		item--;
 		gotoxy(38, 39);
 		textcolor(15, 0);
@@ -409,6 +415,7 @@ int check_item_collision2(int x, int y, char ch)
 	if (map2[yPos][xPos] == '4' && x == item7_x && y == item7_y) {
 		check_map2_item7 = 1;
 		map2[yPos][xPos] = '0';
+		show_quiz(1);
 		item--;
 		gotoxy(38, 39);
 		textcolor(15, 0);
@@ -420,6 +427,7 @@ int check_item_collision2(int x, int y, char ch)
 	if (map2[yPos][xPos] == '4' && x == item8_x && y == item8_y) {
 		check_map2_item8 = 1;
 		map2[yPos][xPos] = '0';
+		show_quiz(1);
 		item--;
 		gotoxy(38, 39);
 		textcolor(15, 0);
@@ -437,23 +445,32 @@ void print_quiz1(int n)
 	char quiz1_1[50] = "물음표에 들어갈 것은?";
 	char quiz1_2[50] = "10 50 60 ? 110 150 160";
 	char quiz1_3[50] = "? 510 550 560 ? 610";
-	char answer[50];
+	char answer[50] = "100 200 600";
+	char scan[50];
 
 	textcolor(15, 0);
 	switch(n) {
 	case 1:
-		gotoxy(30, 38);
+		gotoxy(34, 38);
 		printf("%s", quiz1_1);
-		gotoxy(30, 39);
+		gotoxy(34, 39);
 		printf("%s", quiz1_2);
-		gotoxy(30, 40);
+		gotoxy(34, 40);
 		printf("%s", quiz1_3);
 		gotoxy(27, 41); // 힌트 출력, 정답 입력 기능 추가
-		scanf("%s", answer);
-		return;
+		textcolor(3, 0);
+		scanf("%s", scan);
+		textcolor(15, 0);
+		break;
 	default:
 		return;
 	}
+	if (scan == answer) {
+		return;
+	}
+	/*else { // 틀렸을 때
+	
+	}*/
 }
 void print_quiz2()
 {
@@ -511,49 +528,49 @@ void show_quiz(int k)
 	int n = 1;
 	unsigned char ch = 0;
 
-	while (n < 9) {
-		if (kbhit() == 1) {
-			ch = getch();
-			if (ch == SPACEBAR) {
-				erase_text(21, 37, 69, 42);
-				switch (k) {
-				case 1:
-					print_quiz1(n);
-					break;
-				case 2:
-					print_quiz2(n);
-					break;
-				case 3:
-					print_quiz3(n);
-					break;
-				case 4:
-					print_quiz4(n);
-					break;
-				case 5:
-					print_quiz5(n);
-					break;
-				case 6:
-					print_quiz6(n);
-					break;
-				case 7:
-					print_quiz7(n);
-					break;
-				case 8:
-					print_quiz8(n);
-					break;
-				default:
-					break;
-				}
-				n++;
-			}
+	//while (n < 9) {
+		//if (kbhit() == 1) {
+		//	ch = getch();
+		//	if (ch == SPACEBAR) {
+		erase_text(21, 37, 69, 42);
+		//switch (k) {
+		switch (n) {
+		case 1:
+			print_quiz1(n);
+			break;
+		case 2:
+			print_quiz2(n);
+			break;
+		case 3:
+			print_quiz3(n);
+			break;
+		case 4:
+			print_quiz4(n);
+			break;
+		case 5:
+			print_quiz5(n);
+			break;
+		case 6:
+			print_quiz6(n);
+			break;
+		case 7:
+			print_quiz7(n);
+			break;
+		case 8:
+			print_quiz8(n);
+			break;
+		default:
+			break;
 		}
-	}
+		//n++;
+	//		}
+	//	}
+	//}
 	erase_text(21, 37, 69, 42);
 	return;
 }
 
 // 문 충돌 감지
-// 랜덤 위치 설정 추가
 int check_door_collision2(int x, int y, char ch)
 {
 	if (x == 67 && y == 8) {
@@ -564,12 +581,6 @@ int check_door_collision2(int x, int y, char ch)
 
 	return 0;
 }
-
-// 열쇠 확인
-//int map2_check2()
-//{
-//	return check_map2_key;
-//}
 
 // 맵2 충돌 감지
 int check_map2_collision(int x, int y, char ch)

@@ -267,7 +267,7 @@ void move_star()
 			}
 
 			//별을 그리기 전에 벽과 충돌했는지 확인하여 충돌한 경우 별을 다른 곳으로 이동
-			if (check_maze_collision(newx, newy, ch)) {
+			if (0) {//(check_maze_collision(newx, newy, ch)) {
 				// 충돌시 미로 시작점으로 돌아감
 				newx = 27;
 				newy = 12;

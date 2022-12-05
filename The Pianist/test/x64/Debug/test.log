@@ -1,6 +1,17 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(test-DESKTOP-5I4TQ7K.vcxproj, test.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
-  map3.c
-C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map3.c(367,17): warning C4013: 'ending_scene'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map3.c(290,13): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map3.c(291,18): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  map2.c
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(188,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(202,19): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(213,23): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(224,23): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(235,23): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(246,23): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(257,23): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(268,23): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(279,23): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(290,23): warning C4553: '==': 식의 결과가 사용되지 않습니다. '='을(를) 의도했습니까?
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(462,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(635,7): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(636,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\test\map2.c(642,10): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   test.vcxproj -> C:\Users\seoyeon\Desktop\Github\Term-Project\The Pianist\x64\Debug\Escape.exe

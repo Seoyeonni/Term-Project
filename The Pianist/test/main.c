@@ -5,9 +5,9 @@ void main()
 {
 	system("mode con cols=120 lines=50");
 	removeCursor();
-	draw_start();
+	//draw_start();
 	//draw_map1();
-	//draw_map2();
+	draw_map2();
 	//draw_map3();
 	//ending_scene();
 
